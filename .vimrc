@@ -6,6 +6,7 @@ set clipboard=unnamedplus
 
 set tabstop=4
 set shiftwidth=4
+set autoindent
 
 set hlsearch
 if maparg('<C-L>', 'n') ==# ''
