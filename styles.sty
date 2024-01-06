@@ -1,0 +1,104 @@
+\ProvidesPackage{styles}
+\RequirePackage{amsfonts, amsmath, amssymb, amsthm, hyperref, mathpazo, enumerate}
+\RequirePackage[all]{xy}
+\RequirePackage[capitalise]{cleveref}
+\RequirePackage[titles]{tocloft}
+\RequirePackage[nottoc,numbib]{tocbibind}
+%\RequirePackage[protrusion=true,expansion=true]{microtype}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[CO,CE]{}
+% \fancyfoot[CO,CE]{And this is a fancy footer}
+% \fancyfoot[LE,RO]{\thepage}
+% \fancypagestyle{plain}{\pagestyle{fancy}}
+\usepackage{fancyvrb}
+\usepackage{varwidth}
+\usepackage{tgheros}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+%\usepackage[dvipsnames]{xcolor}
+\usepackage{pgfplots}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta}
+\tikzset{+ /.tip = {Bar[sep=1.5pt 2,width=3pt 4]_[sep=0]}}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage[font={small}]{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\linespread{1.05}
+\setlength{\cftbeforesecskip}{1.5ex}
+\allowdisplaybreaks
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem*{thm*}{Theorem}
+\newtheorem{conjecture}[thm]{Conjecture}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem*{defn*}{Definition}
+\newtheorem{ex}[thm]{Example}
+\newtheorem*{ex*}{Example}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem*{lem*}{Lemma}
+\newtheorem{app}[thm]{Appendix}
+
+\newtheorem{problem}{Problem}
+\newenvironment{prob}[1]
+  {\renewcommand\theproblem{#1}\problem}
+  {\endproblem}
+
+\newtheorem{solution}{Solution}
+\newenvironment{sol}[1]
+  {\renewcommand\thesolution{#1}\solution}
+  {\endsolution}
+
+\crefname{thm}{theorem}{theorems}
+\Crefname{thm}{Theorem}{Theorems}
+
+% Macros
+% Functors
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\im}{im}
+
+\DeclareMathOperator{\disc}{disc}
+
+% Rings
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\Fb}{\overline{\mathbf{F}}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\Qb}{\overline{\mathbf{Q}}}
+\newcommand{\Qp}{\mathbf{Q}_p}
+\newcommand{\Ql}{\mathbf{Q}_\ell}
+\newcommand{\Qpb}{\overline{\mathbf{Q}}_p}
+\newcommand{\Qlb}{\overline{\mathbf{Q}}_\ell}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\Zb}{\overline{\mathbf{Z}}}
+\newcommand{\cO}{\mathcal{O}}
+
+% Groups
+\newcommand{\GQ}{\Gal(\Qb/\QQ)}
+\newcommand{\Gp}{\mathrm{G}_p}
+\newcommand{\Gl}{\mathrm{G}_\ell}
+
+\newcommand{\ddq}{\frac{\mathrm{d}}{\mathrm{d}q}}
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\tamr}{\mathrm{tr}}
+\newcommand{\rss}{\rho^\text{ss}}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\tr}{tr}
+
+\newcommand{\LA}{\mathcal{L}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ba}{\mathbf{b}}
+\newcommand{\Z}{\mathbb{Z}}
