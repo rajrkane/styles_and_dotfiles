@@ -1,0 +1,39 @@
+{
+    "editor.wordWrap": "on",
+    "editor.fontSize": 16,
+    "editor.tabSize": 4,
+    "workbench.settings.editor": "json",
+    "telemetry.enableTelemetry": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.inlayHints.enabled": "off",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "[python]": {
+        "editor.tabSize": 4,
+        "diffEditor.ignoreTrimWhitespace": false
+    },
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": [
+        "--disable=missing-module-docstring",
+        "--disable=missing-class-docstring",
+        "--disable=missing-function-docstring",
+        "--load-plugins=pylint_django",
+        "--django-settings-module=prydai_proj.settings"
+    ],
+    "explorer.confirmDelete": false,
+    "workbench.colorTheme": "Monokai Pro",
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "terminal.integrated.profiles.linux": {
+        "tmux": {
+          "path": "tmux",
+          "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"]
+        }
+      },
+    "terminal.integrated.defaultProfile.linux": "tmux",
+    "window.zoomLevel": 1,
+    "terminal.integrated.tabs.location": "left",
+    "terminal.integrated.tabs.enabled": false,
+    // "editor.indentSize": "tabSize",
+    // "editor.insertSpaces": false
+}
