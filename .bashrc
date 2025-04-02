@@ -136,7 +136,4 @@ ex ()
   fi
 }
 
-#alias clingo='python3 /home/rajrkane/.local/lib/python3.10/site-packages/clingo/__main__.py'
-alias protege='sh /home/rajrkane/Protege-5.5.0/run.sh'
-
 bind 'TAB:menu-complete'
