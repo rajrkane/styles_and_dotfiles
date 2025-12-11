@@ -1,6 +1,48 @@
-# Use powerline
-USE_POWERLINE="true"
-# Virtualenvwrapper things
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+# --- Shell Customization ---
+
+# Set a better terminal type for compatibility with Vim, Tmux, etc.
+export TERM="xterm-256color"
+
+# Keep lots of history
+HISTSIZE=10000
+SAVEHIST=10000
+
+# Append to history, don't overwrite it
+setopt APPEND_HISTORY
+
+# Enable magic shorthand for changing directories
+# '..' goes up one directory, '...' goes up two, etc.
+setopt AUTO_CD             # Allows you to type a directory name without 'cd'
+setopt AUTO_PUSHD          # Saves the previous directory to the stack
+setopt PUSHD_IGNORE_DUPS   # Don't save duplicate directories to the stack
+
+# Shorten common directory navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# Use eza or ls with color (if you installed 'eza' via Homebrew, use that instead of 'ls')
+# If not, you can use the built-in 'ls' with colors
+alias ls='ls -G'      # -G enables color on macOS
+alias ll='ls -alG'    # Long listing format, show all, with colors
+
+# Shortcut for editing your config files
+alias zshrc='vim ~/.zshrc'
+alias tmuxconf='vim ~/.tmux.conf'
+alias vimrc='vim ~/.vimrc'
+
+# Always force a human-readable size display
+alias df='df -h'
+alias du='du -h'
+
+# --- Tmux Auto-Start Configuration ---
+
+# This function checks if $TMUX is set (meaning we are already inside a session).
+# If not, it attempts to attach to the 'main' session, creating it if it doesn't exist.
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    # -u: Unset environment variables from previous detach.
+    # -t: Target session name ('main').
+    # ||: If attach fails (no 'main' session exists).
+    # new -s: Create a new session named 'main'.
+    tmux attach-session -t main || tmux new-session -s main
+fi
